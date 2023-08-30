@@ -26,5 +26,17 @@ internal class Program
             list.Add(new Funcionario(cod, nome, salario));
             Console.WriteLine();
         }
+
+        Console.Write("Entre com o código do funcionário que quer aumentar o salário: ");
+        int BuscaCod = int.Parse(Console.ReadLine());
+
+        Funcionario busca = list.Find(x => x.Cod == BuscaCod);
+        if ( busca != null ) 
+        {
+            Console.Write("Entre com o percentual do aumento: ");
+            double porcentagem = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        }
+
     }
 }

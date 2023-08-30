@@ -18,5 +18,10 @@ namespace ExercicioDeFixacao_Listas
             Nome = nome;
             Salario = salario;
         }
+
+        public void AumentoSalario (double porcentagem)
+        {
+            Salario += Salario * porcentagem / 100.0;
+        }
     }
 }
