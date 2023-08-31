@@ -9,13 +9,14 @@ internal class Program
         Console.WriteLine("--------------------------------------");
 
         Console.WriteLine();
-        Console.Write("Quantos funcionários você quer cadastrar?");
+        Console.Write("Quantos funcionários você quer cadastrar? ");
         int num = int.Parse(Console.ReadLine());
 
         List<Funcionario> list = new List<Funcionario>();
 
-        for (int i = 1; i < num; i++)
+        for (int i = 1; i <= num; i++)
         {
+            Console.WriteLine();
             Console.WriteLine("Funcionário #" + i + ":");
             Console.Write("Código: ");
             int cod = int.Parse(Console.ReadLine());
@@ -27,6 +28,7 @@ internal class Program
             Console.WriteLine();
         }
 
+        Console.WriteLine();
         Console.Write("Entre com o código do funcionário que quer aumentar o salário: ");
         int BuscaCod = int.Parse(Console.ReadLine());
 
@@ -35,8 +37,16 @@ internal class Program
         {
             Console.Write("Entre com o percentual do aumento: ");
             double porcentagem = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-
+            busca.AumentoSalario(porcentagem);
+        }
+        else
+        {
+            Console.WriteLine("Esse código não existe!");
         }
 
+        Console.WriteLine();
+        Console.WriteLine("Lista Atualizada dos funcionários:");
+        foreach (Funcionario obj in list)
+        { Console.WriteLine(obj.ToString()); }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
 namespace ExercicioDeFixacao_Listas
 {
@@ -22,6 +19,15 @@ namespace ExercicioDeFixacao_Listas
         public void AumentoSalario (double porcentagem)
         {
             Salario += Salario * porcentagem / 100.0;
+        }
+
+        public override string ToString()
+        {
+            return Cod
+                + ", "
+                + Nome
+                + ", "
+                + Salario.ToString("f2", CultureInfo.InvariantCulture);
         }
     }
 }
